@@ -1,0 +1,42 @@
+objective: Simulate the core gameplay mechanics for "Match That!" to be able to run in the terminal.
+
+Program flow: 
+ 1. User chooses to start the game
+    - User can end the game from here
+
+ 2. User sets game settings (SET IT OFF)
+    - input num. of players, range 2-8
+    - pick game length, quick play or full game
+    - set difficulty: beginner, interm., advanced
+    - OPTIONAL: Set player names
+    - "Start Game"
+
+3. while game loop: 
+    Display:  
+    - Who's turn it is
+    - "Trick 1/(game length)"
+    - input landed or missed
+    - If landed, award points to player, next trick
+    - else, no points awarded, same trick, next player
+
+4. calculate score 
+    - print winner
+    - Display a top 3 ranking
+
+========================================================
+Classes
+1. Player 
+    - player info
+    - score
+
+2. Trick 
+    - trick
+    - difficulty 
+    - point value
+
+3. Game 
+    - manage turns
+    - manage scoring
+
+4. TrickLibrary
+    - stores all tricks (json generator?)
