@@ -40,3 +40,16 @@ Classes
 
 4. TrickLibrary
     - stores all tricks (json generator?)
+    - easy tricks: 3 - 5 points
+    - medium tricks: 10 - 15points
+    - hard tricks: 20 - 30 points
+
+    - 10 easy tricks, 10 medium tricks, 10 hard tricks
+    - pull different kinds of tricks based on difficulty selected? 
+=======================================================
+Additional notes: 
+to store tricks, use a dictionary with keys corresponding to: 
+    - trick
+    - difficulty 
+    - points
+
