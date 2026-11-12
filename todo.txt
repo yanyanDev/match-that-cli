@@ -53,3 +53,11 @@ to store tricks, use a dictionary with keys corresponding to:
     - difficulty 
     - points
 
+DONE:
+- wrote full settings class and abstracted it 
+- successfully passed variables from Settings to Game 
+
+TODO: 
+- write game loop
+    
+

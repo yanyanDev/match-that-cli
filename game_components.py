@@ -10,15 +10,25 @@ class Trick:
         self.trick = trick
         self.difficulty = difficulty
         self.points = points
-
+        
 class TrickLibrary: 
     #dictionary containing all tricks? 
     def __init__(self, tricks):
-        #placeholder data for now
+        #placeholder data for now (currently a dictionary of 60 tricks)
         self.tricks = {
             #trick, difficulty, points
 
             #easy 
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
             "Kickflip": {"difficulty": "Easy", "points": 5},
             "Kickflip": {"difficulty": "Easy", "points": 5},
             "Kickflip": {"difficulty": "Easy", "points": 5},
@@ -41,8 +51,28 @@ class TrickLibrary:
             "Kickflip": {"difficulty": "Easy", "points": 5},
             "Kickflip": {"difficulty": "Easy", "points": 5},
             "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
 
             #hard 
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
+            "Kickflip": {"difficulty": "Easy", "points": 5},
             "Kickflip": {"difficulty": "Easy", "points": 5},
             "Kickflip": {"difficulty": "Easy", "points": 5},
             "Kickflip": {"difficulty": "Easy", "points": 5},
