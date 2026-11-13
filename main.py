@@ -11,6 +11,9 @@ if yes_or_no == "y":
    #Creates new game instance via variables passed from settings class
     new_game = Game(player_quantity, player_list, is_anonymous, is_long)
 
+    #start game from new game object
+
+
 else: 
     print("good bye")
 

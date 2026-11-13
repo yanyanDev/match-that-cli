@@ -1,4 +1,4 @@
-#initialze to start the a game
+from game_components import Player, Trick, TrickLibrary
 class Settings: 
     def game_settings(self):
         print("GAME SETTINGS")
@@ -28,14 +28,6 @@ class Settings:
                 print(f"Please enter a valid input.")
                 cont = True
     
-        # TO PASS TO GAME OBJECT: 
-        # now have:
-        # - player_quantity
-        # - player_list
-        # - is_anonymous
-    
-        #print list of players
-    
         cont = True 
         while cont: 
             print("SELECT GAME MODE")
@@ -51,6 +43,7 @@ class Settings:
         print(f"YOUR GAME SETTINGS:")
         print(f"Players: {player_num} || Player Names: {players} || Game Mode: {"Quickplay" if is_game_long == False else "Full Game"}")
 
+        #pass everthing to Game()
         return player_num, players, anonymous, is_game_long
 
 class Game():
@@ -60,6 +53,37 @@ class Game():
         self.player_list = player_list #list
         self.is_anonymous = is_anonymous #bool
         self.is_long = is_long #bool
+
+        
+    def pull_trick(self):
+        pass
+        #randomchoice TrickLibrary
+    
+    def start_game(self):
+        pass 
+        #CORE GAME LOOP
+
+        #instantiate Player class for all players 
+
+        # starting player = random choice players
+        # starting player moved to index 0 of players
+
+        # game duration = 10 if quickplay, 30 if fullgame
+        # while game duration != 0:
+            # for player in players:
+                # current trick = pull random trick
+                # if landed:
+                #   award trick points to player
+                #   current trick = pull random trick
+                #   game duration decrement by 1
+                # else:
+                #   print("no points awarded, next player")
+
+
+        # at the end of the game, print the top three players 
+
+    
+
 
     
 
