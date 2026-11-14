@@ -13,7 +13,7 @@ class Trick:
         
 class TrickLibrary: 
     #dictionary containing all tricks? 
-    def __init__(self, tricks):
+    def __init__(self):
         #placeholder data for now (currently a dictionary of 60 tricks)
         
         self.tricks = {
@@ -179,3 +179,10 @@ class TrickLibrary:
             "540 Flip": {"difficulty": "Hard", "points": 29},
             "Double Laser Flip": {"difficulty": "Hard", "points": 30},
         }
+
+    def __iter__(self):
+        #tells python to iterate over the internal dictionary
+        return iter(self.tricks)
+
+    
+

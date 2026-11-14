@@ -57,7 +57,14 @@ DONE:
 - wrote full settings class and abstracted it 
 - successfully passed variables from Settings to Game 
 
-TODO: 
-- write game loop
+
     
 
+Current bugs as of 11/14: 
+    in game_brain: 
+        name dispays for each turn only say "guest" instead of the strings in player_list
+
+TODO: 
+    fix instantiation of player class for each player 
+    write code that displays the winner + top 3 
+    write code that shows each player's points every turn

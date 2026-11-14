@@ -1,4 +1,5 @@
 from game_components import Player, Trick, TrickLibrary
+import random
 class Settings: 
     def game_settings(self):
         print("GAME SETTINGS")
@@ -54,30 +55,47 @@ class Game():
         self.is_anonymous = is_anonymous #bool
         self.is_long = is_long #bool
 
+        #create TrickLibrary instance 
+        self.trick_library = TrickLibrary()
+
         
     def pull_trick(self):
-        pass
-        #randomchoice TrickLibrary
-    
+        return random.choice(list(self.trick_library))
+       
+
     def start_game(self):
         pass 
         #CORE GAME LOOP
 
-        #instantiate Player class for all players 
+        #instantiate Player objects for all players 
+        to_play = []
+        for player in self.player_list: 
+            player = Player()
+            to_play.append(player)
+            
 
-        # starting player = random choice players
-        # starting player moved to index 0 of players
+        game_duration = 30 if self.is_long else 10
+        while game_duration is not 0:
+            for player in to_play:
+                current_trick = self.pull_trick()
+                points = self.trick_library.tricks[current_trick]["points"]
 
-        # game duration = 10 if quickplay, 30 if fullgame
-        # while game duration != 0:
-            # for player in players:
-                # current trick = pull random trick
-                # if landed:
+                print(f"TRICKS LEFT: [{game_duration}/{30 if self.is_long else 10 }]")
+                print(f"the current trick is {current_trick} worth {points} points")
+                print(f"GO!")
+                
+                landed = int(input(f"Type 1 if landed, 2 if missed: "))
+                if landed == 1:
+                    print(f"MATCHED!!! {player.name} gets {points} points.")
                 #   award trick points to player
+                    player.score += points
                 #   current trick = pull random trick
+                    curent_trick = self.pull_trick()
                 #   game duration decrement by 1
-                # else:
-                #   print("no points awarded, next player")
+                    game_duration -= 1
+                elif landed == 2:
+                  print("MISSED!!!")
+                  print("no points awarded, next player")
 
 
         # at the end of the game, print the top three players 

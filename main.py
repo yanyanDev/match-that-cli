@@ -12,6 +12,7 @@ if yes_or_no == "y":
     new_game = Game(player_quantity, player_list, is_anonymous, is_long)
 
     #start game from new game object
+    new_game.start_game()
 
 
 else: 
