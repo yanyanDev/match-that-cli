@@ -1,8 +1,9 @@
 from game_components import Player, Trick, TrickLibrary
+from art import game_settings
 import random
 class Settings: 
     def game_settings(self):
-        print("GAME SETTINGS")
+        print(game_settings)
         cont = True
         while cont:
             player_num = int(input(f"How many players? (2 minimum - 8 maximum): "))
@@ -40,7 +41,9 @@ class Settings:
             elif quick_or_full == 2: 
                 is_game_long = True
                 cont = False
-    
+
+        for _ in range(2):
+            print()
         print(f"YOUR GAME SETTINGS:")
         print(f"Players: {player_num} || Player Names: {players} || Game Mode: {"Quickplay" if is_game_long == False else "Full Game"}")
 
@@ -78,6 +81,10 @@ class Game():
         #pull random trick
         current_trick, points = self.pull_trick()
 
+        #space for visibility
+        for _ in range(2):
+            print()
+
         game_duration = 30 if self.is_long else 10
         while game_duration > 0:
 
@@ -88,9 +95,9 @@ class Game():
                     print(f"{display.name}'s score: {display.score}")
 
                 #display current trick and who's turn it is
-                print(f"TRICKS LEFT: [{game_duration}/{30 if self.is_long else 10 }]")
+                print(f"\033[1mTRICKS LEFT:\033[0m [{game_duration}/{30 if self.is_long else 10 }]")
                 print(f"It's {player.name}'s turn!")
-                print(f"the current trick is {current_trick} worth {points} points")
+                print(f"the current trick is \033[1m{current_trick}\033[0m worth {points} points")
                 print(f"GO!")
 
                 #checks if landed, game_duration decrements every turn. 
@@ -103,8 +110,8 @@ class Game():
                     game_duration -= 1
                     
                 elif landed == 2:
-                  print("MISSED!!!")
-                  print(f"no points awarded to {player.name}.")
+                    print("MISSED!!!")
+                    print(f"no points awarded to {player.name}.")
 
                 #space for visibility
                 for _ in range(5):
@@ -116,7 +123,7 @@ class Game():
         #re-sort player list ordered by number of points accumulated
         sorted_players = sorted(to_play, key=lambda player: -player.score)
         winner = sorted_players[0]
-        print(f"TRICKS LEFT: [{game_duration}/{30 if self.is_long else 10 }]")
+        print(f"\033[1mTRICKS LEFT:\033[0m [{game_duration}/{30 if self.is_long else 10 }]")
         print(f"THE WINNER IS {winner.name}!!!")
         print()
         print(f"FINAL SCORES:")

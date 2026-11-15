@@ -183,6 +183,3 @@ class TrickLibrary:
     def __iter__(self):
         #tells python to iterate over the internal dictionary
         return iter(self.tricks)
-
-    
-
