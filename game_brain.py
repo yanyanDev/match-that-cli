@@ -60,48 +60,69 @@ class Game():
 
         
     def pull_trick(self):
-        return random.choice(list(self.trick_library))
+        trick = random.choice(list(self.trick_library))
+        points = self.trick_library.tricks[trick]["points"]
+        return trick, points
        
 
     def start_game(self):
-        pass 
-        #CORE GAME LOOP
+        """Starts a game using all settings from the Game() constructor."""
 
-        #instantiate Player objects for all players 
+        #instantiate Player objects for all players and store in a list to iterate through
         to_play = []
         for player in self.player_list: 
-            player = Player()
-            to_play.append(player)
-            
+            player_obj = Player()
+            player_obj.name = player
+            to_play.append(player_obj)
+
+        #pull random trick
+        current_trick, points = self.pull_trick()
 
         game_duration = 30 if self.is_long else 10
-        while game_duration is not 0:
-            for player in to_play:
-                current_trick = self.pull_trick()
-                points = self.trick_library.tricks[current_trick]["points"]
+        while game_duration > 0:
 
+            #CORE GAME LOOP
+            for player in to_play:
+                #display names
+                for display in to_play:
+                    print(f"{display.name}'s score: {display.score}")
+
+                #display current trick and who's turn it is
                 print(f"TRICKS LEFT: [{game_duration}/{30 if self.is_long else 10 }]")
+                print(f"It's {player.name}'s turn!")
                 print(f"the current trick is {current_trick} worth {points} points")
                 print(f"GO!")
-                
+
+                #checks if landed, game_duration decrements every turn. 
                 landed = int(input(f"Type 1 if landed, 2 if missed: "))
                 if landed == 1:
                     print(f"MATCHED!!! {player.name} gets {points} points.")
-                #   award trick points to player
+
                     player.score += points
-                #   current trick = pull random trick
-                    curent_trick = self.pull_trick()
-                #   game duration decrement by 1
+                    current_trick, points = self.pull_trick()
                     game_duration -= 1
+                    
                 elif landed == 2:
                   print("MISSED!!!")
-                  print("no points awarded, next player")
+                  print(f"no points awarded to {player.name}.")
 
+                #space for visibility
+                for _ in range(5):
+                    print()
 
-        # at the end of the game, print the top three players 
+                if game_duration == 0:
+                    break
 
-    
+        #re-sort player list ordered by number of points accumulated
+        sorted_players = sorted(to_play, key=lambda player: -player.score)
+        winner = sorted_players[0]
+        print(f"TRICKS LEFT: [{game_duration}/{30 if self.is_long else 10 }]")
+        print(f"THE WINNER IS {winner.name}!!!")
+        print()
+        print(f"FINAL SCORES:")
 
-
-    
-
+        #display rankings
+        rank = 1
+        for display in sorted_players:
+            print(f"{rank}. {display.name}'s score: {display.score}")
+            rank += 1

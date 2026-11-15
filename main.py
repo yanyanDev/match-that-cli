@@ -13,8 +13,6 @@ if yes_or_no == "y":
 
     #start game from new game object
     new_game.start_game()
-
-
 else: 
     print("good bye")
 
