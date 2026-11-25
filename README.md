@@ -1,4 +1,4 @@
-# Match That! — CLI
+ # Match That! — CLI
 
 A Python command-line prototype of **Match That!**, a turn-based multiplayer fingerboarding game where players compete to land randomly generated tricks and earn points.
 
@@ -12,6 +12,12 @@ This project was developed to prototype the core gameplay mechanics of the upcom
 - **Two Game Modes** — Quickplay (10 tricks) and Full Game (30 tricks).
 - **Live Scoreboard** — Track player scores throughout the game.
 - **Final Rankings** — Display the winner and player standings.
+
+## Main Differences between the Flutter App and the CLI version
+
+- As of 11/25/26, the Match That! Flutter Application is a **work in progress.**
+- No Timer: To keep things simple with the CLI program, the game loop does not include a trick timer unlike the Flutter App.
+- Trick Library: In the Flutter App, trick names are parsed by name, stance, and modifiers to randomly generate ~320 unique tricks. In this CLI prototype, tricks are predefined as a dictionary in a TrickLibrary() class.
 
 ## How to Play
 
